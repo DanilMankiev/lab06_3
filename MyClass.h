@@ -1,12 +1,12 @@
 #ifndef MYCLASS_H
 #define MYCLASS_H
 #include<QApplication>
+#include<QVector>
 
 class MyClass : public QObject
 {
     Q_OBJECT
-    QObject* array[5];
-    int countOfNumbers;
+     QVector<QObject*> widgets;
 public:
     MyClass();
     void addNew(QObject* new_object);
