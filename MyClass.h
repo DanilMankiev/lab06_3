@@ -2,17 +2,21 @@
 #define MYCLASS_H
 #include<QApplication>
 #include<QVector>
+#include<QPushButton>
+#include<QVBoxLayout>
 
-class MyClass : public QObject
+class MyClass : public QWidget
 {
     Q_OBJECT
      QVector<QObject*> widgets;
+     QPushButton* add_button;
+     QVBoxLayout* m_layout;
+     int count;
 public:
-    MyClass();
+    MyClass(QWidget* parent = nullptr);
+    ~MyClass();
     void addNew(QObject* new_object);
-    public slots:
-    void setValue(int value);
-    signals:
-    void valueChanged(int value);
+private slots:
+    void ClickedSLot();
 };
 #endif // MYCLASS_H
